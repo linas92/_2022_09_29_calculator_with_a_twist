@@ -1,6 +1,6 @@
 import turtle
-from tkinter import *
 import tkinter as tk
+from tkinter import StringVar
 from PIL import ImageTk, Image
 import os
 
@@ -35,8 +35,32 @@ import os
 #     left(90)
 # elif gamers_input == "d":
 #     right(90)
-
-
 #########################################################################################           CODE???
-windywindow = tk()
+windywindow = tk.Tk()
 textytext = StringVar()
+
+windywindow.geometry("340x500")
+entry_numbers = tk.Entry()
+
+def number_buttons():
+    for number in range(0,10):
+        number += 0
+
+def number_plus():
+    pass
+
+button_number_0 = tk.Button(windywindow, text=number_buttons, command=number_buttons)
+button_symbol_plus = tk.Button(windywindow, text="+", command=number_plus)
+#wtf am i high???
+# button_number_1 = tk.Button(windywindow, text="1", command=number_buttons)
+# button_number_2 = tk.Button(windywindow, text="2", command=number_buttons)
+# button_number_3 = tk.Button(windywindow, text="3", command=number_buttons)
+# button_number_4 = tk.Button(windywindow, text="4", command=number_buttons)
+# button_number_5 = tk.Button(windywindow, text="5", command=number_buttons)
+# button_number_6 = tk.Button(windywindow, text="6", command=number_buttons)
+# button_number_7 = tk.Button(windywindow, text="7", command=number_buttons)
+# button_number_8 = tk.Button(windywindow, text="8", command=number_buttons)
+# button_number_9 = tk.Button(windywindow, text="9", command=number_buttons)
+#wtf am i high???
+
+windywindow.mainloop()
