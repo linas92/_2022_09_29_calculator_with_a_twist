@@ -14,7 +14,7 @@ import os
 
 # bet pirma, pazaisikite su situ nauju dalyku kuri perskaiciau :D
 
-
+#########################################################################################           TURTLE GAME INSTRUCTIONS
 # print("Hello dear friends and students!")
 # print("Welcome to the hidden game!")
 # print("These are the Calculators with a Twist - Game Instructions")
@@ -35,6 +35,8 @@ import os
 #     left(90)
 # elif gamers_input == "d":
 #     right(90)
-    
+
+
+#########################################################################################           CODE???
 windywindow = tk()
 textytext = StringVar()
