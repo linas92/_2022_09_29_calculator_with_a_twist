@@ -9,14 +9,16 @@ import tkinter as tk
 # bet pirma, pazaisikite su situ nauju dalyku kuri perskaiciau :D
 
 
-print("Hello dear students!   ↑ →  ←  ")
+print("Hello dear friends and students!")
 print("Welcome to the hidden game!")
 print("Calculator with a Twist - Game Instructions")
-print("Thing is, i'm not the brightest, so you can only use 3 buttons.")
-print("Arrow up\"\2191\" goes STRAIGHT")
-print("Arrows left and right \"\" turns to that side 90 degrees (BUT DONT MOVE)")
+print("Thing is, I'm not the brightest, so you can only use 3 buttons!!!")
+print("Arrow up \"↑\" goes STRAIGHT")
+print("Arrows left \"→\" or right \"←\" turns to the pressed side 90 degrees (BUT IT DOES NOT MAKE IT MOVE)")
 print("ENJOY THIS A+ PROJECT AND GAME!")
+
 gamers_input = input("")
+
 pirmny = forward(100)
 kaire = left(90)
 desine = right(90)
