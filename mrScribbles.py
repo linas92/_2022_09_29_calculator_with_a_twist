@@ -12,7 +12,7 @@ import os
 # 1.3 turtle game inside the calculator... ughhh... ONLY do extra
 # 2. put a game inside the calculator. Sounds easy :DDDD Omg I went insane thinking about it :DDDDDDDD
 
-# bet pirma, pazaisikite su situ nauju dalyku kuri perskaiciau :D
+# bet pirma, pazaisiu su situ nauju dalyku kuri perskaiciau :D
 
 #########################################################################################           TURTLE GAME INSTRUCTIONS
 # print("Hello dear friends and students!")
@@ -35,11 +35,13 @@ import os
 #     left(90)
 # elif gamers_input == "d":
 #     right(90)
-#########################################################################################           CODE???
+############################################################################         CODE FOR FUTURE GAME THAT MIGHT NOT BE FINISHED ????? WHY ???
 windywindow = tk.Tk()
 textytext = StringVar()
 
-windywindow.geometry("340x500")
+windywindow.geometry("320x400")
+windywindow.resizable(0,0)
+windywindow.title("Calculators with a Twist")
 entry_numbers = tk.Entry()
 
 def number_buttons():
@@ -48,9 +50,17 @@ def number_buttons():
 
 def number_plus():
     pass
+def number_substract():
+    pass
+def number_multiply():
+    pass
+def number_divide():
+    pass
 
 button_number_0 = tk.Button(windywindow, text=number_buttons, command=number_buttons)
 button_symbol_plus = tk.Button(windywindow, text="+", command=number_plus)
+windywindow.mainloop()
+
 #wtf am i high???
 # button_number_1 = tk.Button(windywindow, text="1", command=number_buttons)
 # button_number_2 = tk.Button(windywindow, text="2", command=number_buttons)
@@ -62,5 +72,3 @@ button_symbol_plus = tk.Button(windywindow, text="+", command=number_plus)
 # button_number_8 = tk.Button(windywindow, text="8", command=number_buttons)
 # button_number_9 = tk.Button(windywindow, text="9", command=number_buttons)
 #wtf am i high???
-
-windywindow.mainloop()
