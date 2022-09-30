@@ -24,7 +24,7 @@ import os
 # print("Thing is, I'm not the brightest, so you can only use 3 buttons!!!")
 # print("Or use the keyboard ^_^\nArrow up \"↑\" goes STRAIGHT")
 # print("Arrows left \"←\" or right \"→\" turns to the side 90 degrees (BUT IT DOES NOT MAKE IT MOVE)")
-# print("ENJOY THIS A+ PROJECT(Girdejote Kestai? A++) AND GAME!")
+# print("ENJOY THIS A+ PROJECT(Girdejote Kestuti?!!? A++) GAME!")
 
 # gamers_input = input("")
 
@@ -49,8 +49,15 @@ windywindow = tk.Tk()
 windywindow.geometry("380x480")
 windywindow.resizable(0,0)
 windywindow.title("Calculators with a Twist")
+axcess_functions = ""
+equation = StringVar()#sita vis trinu ir is naujo parasau, WHY!?> man gi jo reikes. LEAVE IT ALONE
+equation.set("This is the place to enter the equation the \"player\" wants")
 
 #I SHOULD IMPORT MATH
+def input_number(number, equation):
+    global axcess_functions
+    axcess_functions = axcess_functions+str(number)
+    equation.set(axcess_functions)
 
 def number_7():pass
 def number_8():pass
@@ -80,9 +87,13 @@ def symbol_backspace():
 def symbol_quit():
     quit()
 
-entry_numbers = tk.Entry(windywindow)
 
-button_number_7 = tk.Button(windywindow,width=8,height=4,text="7",command=number_7)
+
+
+entry_numbers = tk.Entry(windywindow,textvariable=equation)
+input_frame = tk.Frame(windywindow,width=100,height=50,bd=3,highlightbackground="grey")
+
+button_number_7 = tk.Button(windywindow,width=8,height=4,text="7",command=lambda: input_number(1, equation))
 button_number_8 = tk.Button(windywindow,width=8,height=4,text="8",command=number_8)
 button_number_9 = tk.Button(windywindow,width=8,height=4,text="9",command=number_9)
 button_divide = tk.Button(windywindow,width=8,height=4,text="÷",command=symbol_divide)
@@ -107,9 +118,8 @@ button_clear_c =tk.Button(windywindow,width=8,height=4,text="C",command=symbol_c
 button_backspace = tk.Button(windywindow,width=8,height=4,text="Backspace",command=symbol_backspace)
 button_quit = tk.Button(windywindow,width=8,height=4,text="Quit",command=symbol_quit)
 
-
-entry_numbers.grid(row=0,columnspan=3)
-
+entry_numbers.grid()
+input_frame.grid(row=0,column=0)
 button_number_7.grid(row=1,column=0)
 button_number_8.grid(row=1,column=1)
 button_number_9.grid(row=1,column=2)
