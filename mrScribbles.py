@@ -74,7 +74,19 @@ def input_number(number, equation):
 # def number_0():pass############################################ these turned out to be useless :O
 
 def symbol_dot():pass
-def symbol_equal():pass
+
+def symbol_equal():
+    # total = str(eval(access_functions))
+    # equation.set(total)
+    try:
+        global access_functions
+        total = str(eval(access_functions))
+        equation.set(total)
+        access_functions = ""
+    except:
+        equation.set(" Error ")
+        access_functions = ""
+
 def symbol_plus():pass
 def symbol_substract():pass
 def symbol_multiply():pass
@@ -93,38 +105,39 @@ def symbol_backspace():#had to google how to do it as i would NEVER THINK THIS W
     current = entry_numbers.get()
     length = len(current)-1
     entry_numbers.delete(length, END)
+    # global access_functions
+    # access_functions = ""
+    # equation.set("")
     # entry_numbers.delete[::-1],len(entry_numbers.get())#well tthis didnt work at all :D
 
 def symbol_quit():
     quit()
 
 
-button_number_7 = tk.Button(windywindow,width=8,height=4,text="7",command=lambda: input_number(7, equation))
-button_number_8 = tk.Button(windywindow,width=8,height=4,text="8",command=lambda: input_number(8, equation))
-button_number_9 = tk.Button(windywindow,width=8,height=4,text="9",command=lambda: input_number(9, equation))
+button_number_7 = tk.Button(windywindow,width=8,height=4,text="7",command=lambda: input_number(7,equation))
+button_number_8 = tk.Button(windywindow,width=8,height=4,text="8",command=lambda: input_number(8,equation))
+button_number_9 = tk.Button(windywindow,width=8,height=4,text="9",command=lambda: input_number(9,equation))
 button_divide = tk.Button(windywindow,width=8,height=4,text="÷",command=symbol_divide)
 
-button_number_4 = tk.Button(windywindow,width=8,height=4,text="4",command=lambda: input_number(4, equation))
-button_number_5 = tk.Button(windywindow,width=8,height=4,text="5",command=lambda: input_number(5, equation))
-button_number_6 = tk.Button(windywindow,width=8,height=4,text="6",command=lambda: input_number(6, equation))
+button_number_4 = tk.Button(windywindow,width=8,height=4,text="4",command=lambda: input_number(4,equation))
+button_number_5 = tk.Button(windywindow,width=8,height=4,text="5",command=lambda: input_number(5,equation))
+button_number_6 = tk.Button(windywindow,width=8,height=4,text="6",command=lambda: input_number(6,equation))
 button_multiply = tk.Button(windywindow,width=8,height=4,text="*",command=symbol_multiply)
 
-button_number_1 = tk.Button(windywindow,width=8,height=4,text="1",command=lambda: input_number(1, equation))
-button_number_2 = tk.Button(windywindow,width=8,height=4,text="2",command=lambda: input_number(2, equation))
-button_number_3 = tk.Button(windywindow,width=8,height=4,text="3",command=lambda: input_number(3, equation))
+button_number_1 = tk.Button(windywindow,width=8,height=4,text="1",command=lambda: input_number(1,equation))
+button_number_2 = tk.Button(windywindow,width=8,height=4,text="2",command=lambda: input_number(2,equation))
+button_number_3 = tk.Button(windywindow,width=8,height=4,text="3",command=lambda: input_number(3,equation))
 button_substract = tk.Button(windywindow,width=8,height=4,text="-",command=symbol_substract)
 
-button_number_0 = tk.Button(windywindow,width=8,height=4,text="0",command=lambda: input_number(0, equation))
+button_number_0 = tk.Button(windywindow,width=8,height=4,text="0",command=lambda: input_number(0,equation))
 button_dot = tk.Button(windywindow,width=8,height=4,text=".",command=lambda: input_number(".",equation))
 button_equal = tk.Button(windywindow,width=8,height=4,text="=",command=symbol_equal)
-button_add = tk.Button(windywindow,width=8,height=4,text="+",command=symbol_plus)
+button_add = tk.Button(windywindow,width=8,height=4,text="+",command=lambda: input_number("+", equation))
 
 button_game = tk.Button(windywindow,width=8,height=4,text="Game",command=window_to_game)
-
 # button_clear_c =tk.Button(windywindow,width=8,height=4,text="C",command=symbol_clear_c)
-button_clear_c =tk.Button(windywindow, text = "C",width=8,height=4, command = lambda: symbol_clear_c())
-
-button_backspace = tk.Button(windywindow,width=8,height=4,text="Backspace",command=symbol_backspace)
+button_clear_c =tk.Button(windywindow,text="C",width=8,height=4,command=lambda:symbol_clear_c())
+button_backspace = tk.Button(windywindow,width=8,height=4,text="Backspace",command=lambda:symbol_backspace())
 button_quit = tk.Button(windywindow,width=8,height=4,text="Quit",command=symbol_quit)
 
 entry_numbers.grid(columnspan=4,ipadx=50,ipady=10)
