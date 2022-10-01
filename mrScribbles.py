@@ -73,7 +73,7 @@ def input_number(number,equation):
 # def number_3():pass############################################# these turned out to be useless :O
 # def number_0():pass############################################ these turned out to be useless :O
 
-def symbol_dot():pass############################################# this turned out to be useless :O
+# def symbol_dot():pass############################################# this turned out to be useless :O
 
 def symbol_equal():#su equal turejau labai daug errors ir kankinausi... Galiausiai pasiklioviau "good old trusted duck duck go search"
     # total = str(eval(access_functions))#su equal turejau labai daug errors ir kankinausi... Galiausiai pasiklioviau "good old trusted duck duck go search"
@@ -87,10 +87,10 @@ def symbol_equal():#su equal turejau labai daug errors ir kankinausi... Galiausi
         equation.set("Error")
         access_functions=""
 
-def symbol_plus():pass############################################# this turned out to be useless :O
-def symbol_substract():pass############################################# this turned out to be useless :O
-def symbol_multiply():pass############################################# this turned out to be useless :O
-def symbol_divide():pass############################################# this turned out to be useless :O
+# def symbol_plus():pass############################################# this turned out to be useless :O
+# def symbol_substract():pass############################################# this turned out to be useless :O
+# def symbol_multiply():pass############################################# this turned out to be useless :O
+# def symbol_divide():pass############################################# this turned out to be useless :O
 
 def window_to_game():pass
 
