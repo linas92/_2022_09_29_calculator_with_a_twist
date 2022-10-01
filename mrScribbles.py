@@ -46,20 +46,20 @@ import os
     #         number += 0
 
     # def press():pass
-windywindow = tk.Tk()
+windywindow=tk.Tk()
 windywindow.geometry("280x420")
 windywindow.resizable(0,0)
 windywindow.title("Calculators with a Twist")
-access_functions = ""
-equation = StringVar()#sita vis trinu ir is naujo parrasau, WHY!?> man gi jo reikes. LEAVE IT ALONE
+access_functions=""
+equation=StringVar()#sita vis trinu ir is naujo parrasau, WHY!?> man gi jo reikes. LEAVE IT ALONE
 equation.set("0")
-entry_numbers = tk.Entry(windywindow,textvariable=equation)
-input_frame = tk.Frame(windywindow,width=100,height=50,bd=3,highlightbackground="grey")
+entry_numbers=tk.Entry(windywindow,textvariable=equation)
+input_frame=tk.Frame(windywindow,width=100,height=50,bd=3,highlightbackground="grey")
 
 #I SHOULD IMPORT MATH# or not
-def input_number(number, equation):
+def input_number(number,equation):
     global access_functions
-    access_functions = access_functions + str(number)
+    access_functions=access_functions+str(number)
     equation.set(access_functions)
 
 # def number_7():pass############################################# these turned out to be useless :O
@@ -80,12 +80,12 @@ def symbol_equal():#su equal turejau labai daug errors ir kankinausi... Galiausi
     # equation.set(total)#su equal turejau labai daug errors ir kankinausi... Galiausiai pasiklioviau "good old trusted duck duck go search"
     try:
         global access_functions
-        total = str(eval(access_functions))
+        total=str(eval(access_functions))
         equation.set(total)
-        access_functions = ""
+        access_functions=""
     except:
-        equation.set(" Error ")
-        access_functions = ""
+        equation.set("Error")
+        access_functions=""
 
 def symbol_plus():pass############################################# this turned out to be useless :O
 def symbol_substract():pass############################################# this turned out to be useless :O
@@ -96,21 +96,24 @@ def window_to_game():pass
 
 def symbol_clear_c():#kodel n
     global access_functions
-    access_functions = ""
+    access_functions=""
     equation.set("0")
     # entry_numbers.delete(0),len(entry_numbers.get())
 
 def symbol_backspace():
     global access_functions
-    access_functions = access_functions[:-1]
+    access_functions=access_functions[:-1]
     equation.set(equation)
 
+    # access_functions = access_functions[:1]
     # current = equation.get():#had to google how to do it as i would NEVER THINK THIS WAY
     # length = len(current)-1
     # equation.delete(length, END)
 
     # global access_functions
-    # access_functions = ""
+    # access_functions = equation.get()[:-1]
+    # if equation =="":
+    
     # equation.set("")
 
     # entry_numbers.delete[::-1],len(entry_numbers.get())#well tthis didnt work at all :D
@@ -118,31 +121,31 @@ def symbol_backspace():
 def symbol_quit():
     quit()
 
-button_number_7 = tk.Button(windywindow,width=8,height=4,text="7",command=lambda:input_number(7,equation))
-button_number_8 = tk.Button(windywindow,width=8,height=4,text="8",command=lambda:input_number(8,equation))
-button_number_9 = tk.Button(windywindow,width=8,height=4,text="9",command=lambda:input_number(9,equation))
-button_divide = tk.Button(windywindow,width=8,height=4,text="/",command=lambda:input_number("/", equation))
+button_number_7=tk.Button(windywindow,width=8,height=4,text="7",command=lambda:input_number(7,equation))
+button_number_8=tk.Button(windywindow,width=8,height=4,text="8",command=lambda:input_number(8,equation))
+button_number_9=tk.Button(windywindow,width=8,height=4,text="9",command=lambda:input_number(9,equation))
+button_divide=tk.Button(windywindow,width=8,height=4,text="/",command=lambda:input_number("/", equation))
 
-button_number_4 = tk.Button(windywindow,width=8,height=4,text="4",command=lambda:input_number(4,equation))
-button_number_5 = tk.Button(windywindow,width=8,height=4,text="5",command=lambda:input_number(5,equation))
-button_number_6 = tk.Button(windywindow,width=8,height=4,text="6",command=lambda:input_number(6,equation))
-button_multiply = tk.Button(windywindow,width=8,height=4,text="*",command=lambda:input_number("*",equation))
+button_number_4=tk.Button(windywindow,width=8,height=4,text="4",command=lambda:input_number(4,equation))
+button_number_5=tk.Button(windywindow,width=8,height=4,text="5",command=lambda:input_number(5,equation))
+button_number_6=tk.Button(windywindow,width=8,height=4,text="6",command=lambda:input_number(6,equation))
+button_multiply=tk.Button(windywindow,width=8,height=4,text="*",command=lambda:input_number("*",equation))
 
-button_number_1 = tk.Button(windywindow,width=8,height=4,text="1",command=lambda:input_number(1,equation))
-button_number_2 = tk.Button(windywindow,width=8,height=4,text="2",command=lambda:input_number(2,equation))
-button_number_3 = tk.Button(windywindow,width=8,height=4,text="3",command=lambda:input_number(3,equation))
-button_substract = tk.Button(windywindow,width=8,height=4,text="-",command=lambda:input_number("-",equation))
+button_number_1=tk.Button(windywindow,width=8,height=4,text="1",command=lambda:input_number(1,equation))
+button_number_2=tk.Button(windywindow,width=8,height=4,text="2",command=lambda:input_number(2,equation))
+button_number_3=tk.Button(windywindow,width=8,height=4,text="3",command=lambda:input_number(3,equation))
+button_substract=tk.Button(windywindow,width=8,height=4,text="-",command=lambda:input_number("-",equation))
 
-button_number_0 = tk.Button(windywindow,width=8,height=4,text="0",command=lambda:input_number(0,equation))
-button_dot = tk.Button(windywindow,width=8,height=4,text=".",command=lambda:input_number(".",equation))
-button_equal = tk.Button(windywindow,width=8,height=4,text="=",command=symbol_equal)
-button_plus = tk.Button(windywindow,width=8,height=4,text="+",command=lambda:input_number("+",equation))
+button_number_0=tk.Button(windywindow,width=8,height=4,text="0",command=lambda:input_number(0,equation))
+button_dot=tk.Button(windywindow,width=8,height=4,text=".",command=lambda:input_number(".",equation))
+button_equal=tk.Button(windywindow,width=8,height=4,text="=",command=symbol_equal)
+button_plus=tk.Button(windywindow,width=8,height=4,text="+",command=lambda:input_number("+",equation))
 
-button_game = tk.Button(windywindow,width=8,height=4,text="Game",command=window_to_game)
+button_game=tk.Button(windywindow,width=8,height=4,text="Game",command=window_to_game)
 # button_clear_c =tk.Button(windywindow,width=8,height=4,text="C",command=symbol_clear_c)
-button_clear_c =tk.Button(windywindow,text="C",width=8,height=4,command=lambda:symbol_clear_c())
-button_backspace = tk.Button(windywindow,width=8,height=4,text="Backspace",command=lambda:symbol_backspace())
-button_quit = tk.Button(windywindow,width=8,height=4,text="Quit",command=symbol_quit)
+button_clear_c=tk.Button(windywindow,text="C",width=8,height=4,command=lambda:symbol_clear_c())
+button_backspace=tk.Button(windywindow,width=8,height=4,text="Backspace",command=symbol_backspace)
+button_quit=tk.Button(windywindow,width=8,height=4,text="Quit",command=symbol_quit)
 
 entry_numbers.grid(columnspan=4,ipadx=50,ipady=10)
 input_frame.grid(row=0,column=4)
