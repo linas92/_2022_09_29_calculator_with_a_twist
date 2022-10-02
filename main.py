@@ -1,5 +1,4 @@
 from tkinter import *
-import os
 import random
 import webbrowser    
 
@@ -10,8 +9,7 @@ windywindow.title("Calculators with a Twist")
 access_functions = ""
 equation = StringVar()
 equation.set("0")
-entry_numbers = Entry(windywindow, textvariable=equation)
-input_frame = Frame(windywindow, width=100, height=50, bd=3, highlightbackground="black")
+entry_numbers = Entry(windywindow, textvariable=equation, width=40)
 
 def input_number(number, equation):
     global access_functions
@@ -25,7 +23,7 @@ def symbol_equal():
         equation.set(total)
         access_functions = ""
     except:
-        equation.set("Baik lempint")
+        equation.set("NELEMPINK")
         access_functions = ""
 
 def window_to_game():
