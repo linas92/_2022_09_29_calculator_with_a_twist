@@ -1,9 +1,9 @@
-import turtle
 from tkinter import *
 import tkinter as tk
 from tkinter import StringVar
 from PIL import ImageTk, Image
 import os
+import random
 
 windywindow=tk.Tk()
 windywindow.geometry("280x420")
@@ -13,7 +13,6 @@ access_functions=""
 equation=StringVar()
 equation.set("0")
 entry_numbers=tk.Entry(windywindow,textvariable=equation)
-input_frame=tk.Frame(windywindow,width=100,height=50,bd=3,highlightbackground="grey")
 
 def input_number(number,equation):
     global access_functions
@@ -37,10 +36,8 @@ def symbol_clear_c():
     access_functions=""
     equation.set("0")
 
-def symbol_backspace():
-    global access_functions
-    access_functions=access_functions[:-1]
-    equation.set(equation)
+def symbol_random():
+    windywindow.config(background=random.choice(["black","red","green","blue", "yellow",]))
 
 def symbol_quit():
     quit()
@@ -67,11 +64,10 @@ button_plus=tk.Button(windywindow,width=8,height=4,text="+",command=lambda:input
 
 button_game=tk.Button(windywindow,width=8,height=4,text="Game",command=window_to_game)
 button_clear_c=tk.Button(windywindow,text="C",width=8,height=4,command=lambda:symbol_clear_c())
-button_backspace=tk.Button(windywindow,width=8,height=4,text="Backspace",command=symbol_backspace)
+button_random=tk.Button(windywindow,width=8,height=4,text="Backspace",command=symbol_random)
 button_quit=tk.Button(windywindow,width=8,height=4,text="Quit",command=symbol_quit)
 
 entry_numbers.grid(columnspan=4,ipadx=50,ipady=10)
-input_frame.grid(row=0,column=4)
 button_number_7.grid(row=1,column=0)
 button_number_8.grid(row=1,column=1)
 button_number_9.grid(row=1,column=2)
@@ -94,7 +90,7 @@ button_plus.grid(row=4,column=3)
 
 button_game.grid(rows=5,column=0)
 button_clear_c.grid(row=5,column=1)
-button_backspace.grid(row=5,column=2)
+button_random.grid(row=5,column=2)
 button_quit.grid(row=5,column=3)
 
 windywindow.mainloop()

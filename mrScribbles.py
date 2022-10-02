@@ -1,9 +1,10 @@
-import turtle
+# import turtle
 from tkinter import *
-import tkinter as tk
-from tkinter import StringVar
-from PIL import ImageTk, Image
+# import tkinter as tk
 import os
+import random
+import webbrowser
+
 # CIA YRA BAISUS JUODRASTIS KAD MATYCIAU KAIP MANO LOGINIS MASTYMAS IR SMEGENYS DIRBA. KUR REIKIA PADIRBETI IR T.T
 
 # no idea what one to make first.
@@ -16,7 +17,7 @@ import os
 # 3. jeigu turesiu laiko, sukurti dar 1 window. kad butu login -> calculator -> game. Log ijn butu pagal varda ir password. Kad tipo reikia prisijungti. 
 # 3.1 gal net iseitu ideti countdown (tipo kaip authentication)
 
-# bet pirma, pazaisiu su situ nauju dalyku kuri perskaiciau :D
+# bet pirma, pazaisiu su situ nauju dalyku kuri perskaiciau :D turtle
 
 #########################################################################################           TURTLE GAME INSTRUCTIONS
 # print("Hello dear friends and students!")
@@ -46,15 +47,15 @@ import os
     #         number += 0
 
     # def press():pass
-windywindow=tk.Tk()
-windywindow.geometry("280x420")
+windywindow=Tk()
+windywindow.geometry("280x390")
 windywindow.resizable(0,0)
 windywindow.title("Calculators with a Twist")
 access_functions=""
 equation=StringVar()#sita vis trinu ir is naujo parrasau, WHY!?> man gi jo reikes. LEAVE IT ALONE
 equation.set("0")
-entry_numbers=tk.Entry(windywindow,textvariable=equation)
-input_frame=tk.Frame(windywindow,width=100,height=50,bd=3,highlightbackground="grey")
+entry_numbers=Entry(windywindow,textvariable=equation)
+input_frame=Frame(windywindow,width=100,height=50,bd=3,highlightbackground="grey")
 
 #I SHOULD IMPORT MATH# or not
 def input_number(number,equation):
@@ -84,7 +85,7 @@ def symbol_equal():#su equal turejau labai daug errors ir kankinausi... Galiausi
         equation.set(total)
         access_functions=""
     except:
-        equation.set("Error")
+        equation.set("Baik lempint")
         access_functions=""
 
 # def symbol_plus():pass############################################# this turned out to be useless :O
@@ -100,11 +101,9 @@ def symbol_clear_c():#kodel n
     equation.set("0")
     # entry_numbers.delete(0),len(entry_numbers.get())
 
-def symbol_backspace():
-    global access_functions
-    access_functions=access_functions[:-1]
-    equation.set(equation)
-
+def symbol_random():
+    windywindow.config(background=random.choice(["black","red","green","blue", "yellow","cyan","white","purple","pink","orange","grey"]))
+    
     # access_functions = access_functions[:1]
     # current = equation.get():#had to google how to do it as i would NEVER THINK THIS WAY
     # length = len(current)-1
@@ -121,34 +120,34 @@ def symbol_backspace():
 def symbol_quit():
     quit()
 
-button_number_7=tk.Button(windywindow,width=8,height=4,text="7",command=lambda:input_number(7,equation))
-button_number_8=tk.Button(windywindow,width=8,height=4,text="8",command=lambda:input_number(8,equation))
-button_number_9=tk.Button(windywindow,width=8,height=4,text="9",command=lambda:input_number(9,equation))
-button_divide=tk.Button(windywindow,width=8,height=4,text="/",command=lambda:input_number("/", equation))
+button_number_7=Button(windywindow,width=8,height=4,text="7",command=lambda:input_number(7,equation))
+button_number_8=Button(windywindow,width=8,height=4,text="8",command=lambda:input_number(8,equation))
+button_number_9=Button(windywindow,width=8,height=4,text="9",command=lambda:input_number(9,equation))
+button_divide=Button(windywindow,width=8,height=4,text="/",command=lambda:input_number("/", equation))
 
-button_number_4=tk.Button(windywindow,width=8,height=4,text="4",command=lambda:input_number(4,equation))
-button_number_5=tk.Button(windywindow,width=8,height=4,text="5",command=lambda:input_number(5,equation))
-button_number_6=tk.Button(windywindow,width=8,height=4,text="6",command=lambda:input_number(6,equation))
-button_multiply=tk.Button(windywindow,width=8,height=4,text="*",command=lambda:input_number("*",equation))
+button_number_4=Button(windywindow,width=8,height=4,text="4",command=lambda:input_number(4,equation))
+button_number_5=Button(windywindow,width=8,height=4,text="5",command=lambda:input_number(5,equation))
+button_number_6=Button(windywindow,width=8,height=4,text="6",command=lambda:input_number(6,equation))
+button_multiply=Button(windywindow,width=8,height=4,text="*",command=lambda:input_number("*",equation))
 
-button_number_1=tk.Button(windywindow,width=8,height=4,text="1",command=lambda:input_number(1,equation))
-button_number_2=tk.Button(windywindow,width=8,height=4,text="2",command=lambda:input_number(2,equation))
-button_number_3=tk.Button(windywindow,width=8,height=4,text="3",command=lambda:input_number(3,equation))
-button_substract=tk.Button(windywindow,width=8,height=4,text="-",command=lambda:input_number("-",equation))
+button_number_1=Button(windywindow,width=8,height=4,text="1",command=lambda:input_number(1,equation))
+button_number_2=Button(windywindow,width=8,height=4,text="2",command=lambda:input_number(2,equation))
+button_number_3=Button(windywindow,width=8,height=4,text="3",command=lambda:input_number(3,equation))
+button_substract=Button(windywindow,width=8,height=4,text="-",command=lambda:input_number("-",equation))
 
-button_number_0=tk.Button(windywindow,width=8,height=4,text="0",command=lambda:input_number(0,equation))
-button_dot=tk.Button(windywindow,width=8,height=4,text=".",command=lambda:input_number(".",equation))
-button_equal=tk.Button(windywindow,width=8,height=4,text="=",command=symbol_equal)
-button_plus=tk.Button(windywindow,width=8,height=4,text="+",command=lambda:input_number("+",equation))
+button_number_0=Button(windywindow,width=8,height=4,text="0",command=lambda:input_number(0,equation))
+button_dot=Button(windywindow,width=8,height=4,text=".",command=lambda:input_number(".",equation))
+button_equal=Button(windywindow,width=8,height=4,text="=",command=symbol_equal)
+button_plus=Button(windywindow,width=8,height=4,text="+",command=lambda:input_number("+",equation))
 
-button_game=tk.Button(windywindow,width=8,height=4,text="Game",command=window_to_game)
+button_game=Button(windywindow,width=8,height=4,text="Game",command=window_to_game)
 # button_clear_c =tk.Button(windywindow,width=8,height=4,text="C",command=symbol_clear_c)
-button_clear_c=tk.Button(windywindow,text="C",width=8,height=4,command=lambda:symbol_clear_c())
-button_backspace=tk.Button(windywindow,width=8,height=4,text="Backspace",command=symbol_backspace)
-button_quit=tk.Button(windywindow,width=8,height=4,text="Quit",command=symbol_quit)
+button_clear_c=Button(windywindow,text="C",width=8,height=4,command=lambda:symbol_clear_c())
+button_random=Button(windywindow,width=8,height=4,text="Random",command=symbol_random)
+button_quit=Button(windywindow,width=8,height=4,text="Quit",command=symbol_quit)
 
-entry_numbers.grid(columnspan=4,ipadx=50,ipady=10)
-input_frame.grid(row=0,column=4)
+entry_numbers.grid(columnspan=4)
+# input_frame.grid(row=0,column=1)
 button_number_7.grid(row=1,column=0)
 button_number_8.grid(row=1,column=1)
 button_number_9.grid(row=1,column=2)
@@ -171,7 +170,7 @@ button_plus.grid(row=4,column=3)
 
 button_game.grid(rows=5,column=0)
 button_clear_c.grid(row=5,column=1)
-button_backspace.grid(row=5,column=2)
+button_random.grid(row=5,column=2)
 button_quit.grid(row=5,column=3)
 
 windywindow.mainloop()
